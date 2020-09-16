@@ -1,0 +1,21 @@
+<%= render "admin/shared/nav" %>
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Signup Date</th>
+    <th>Admin?</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.created_at.strftime("%d %b. %Y") %></td>
+        <td><%= user.admin? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

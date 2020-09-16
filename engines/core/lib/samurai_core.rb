@@ -1,2 +1,2 @@
-require "samurai/core"
-require "samurai/core/engine"
+require 'samurai/core'
+require 'samurai/core/engine'

@@ -1,24 +1,7 @@
-# README
+# Samurai CRM
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+From the book **Modular Rails - The Complete Guide to Modular Rails Applications** by _Thibault Denizet_
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* No Styles
+* Built with Rails 5.1
+* uses Cancancan

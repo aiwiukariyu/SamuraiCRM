@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Core</title>
-  <%= stylesheet_link_tag    "samurai/application", media: "all" %>
-  <%= javascript_include_tag "samurai/application" %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>Samurai</title>
+    <%= stylesheet_link_tag    "samurai/application", media: "all" %>
+    <%= javascript_include_tag "samurai/application" %>
+    <%= csrf_meta_tags %>
+  </head>
 <body>
-<nav class= "navbar navbar-inverse navbar-fixed-top">
-  
-</nav>
-<%= yield %>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'SamuraiCRM', samurai.root_path, class: 'navbar-brand'%>
+      </div>
+      <%- if current_user%>
+        <div class= "navbar-collapse collapse" id="navbar">
+          <ul>
+            <li class="<%= active(samurai.root_path) %>" data-samurai-hook='main_nav'><%= link_to 'Home', samurai.root_path %></li>
+            <li class="<%= active(samurai.edit_user_registration_path) %>"><%= link_to "Account", samurai.edit_user_registration_path %></li>
+            <% if current_user.admin? %>
+              <li class="<%= active(samurai.admin_path) %>"><%= link_to "Admin", samurai.admin_path %></li>
+            <% end %>
+            <li><%= link_to "Logout", samurai.destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="<%= active(samurai.new_user_session_path) %>"><%= link_to "Login", samurai.new_user_session_path %></li>
+            <li class="<%= active(samurai.new_user_registration_path) %>"><%= link_to "SignUp", samurai.new_user_registration_path %></li>
+      <%  end %>
+    </ul>
+        </div>
+    </div>
+    
+  </nav>
+  <div class='container' role='main'>
+    <div class='jumbotron'>
+      <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key.to_sym) %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

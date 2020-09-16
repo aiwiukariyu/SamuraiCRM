@@ -1,0 +1,17 @@
+<h2><%= @task.title %></h2>
+
+<strong>Title:</strong>
+<%= @task.title %>
+<br/>
+<strong>Content:</strong>
+<%= @task.content %>
+<br/>
+<!-- <strong>Contack</strong>
+<%= @task.contact%>
+<br/> -->
+<strong>User:</strong>
+<%= @task.user.email %>
+<br/>
+
+<%= link_to 'Edit', samurai.edit_task_path(@task) %> |
+<%= link_to 'Back', samurai.tasks_path %>

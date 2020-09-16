@@ -1,0 +1,25 @@
+<%= render 'admin/shared/nav' %>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.content %></td>
+        <td><%= task.created_at.strftime("%d %b. %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<h2><%= @contact.first_name %></h2>
+
+<strong>First Name:</strong>
+<%= @contact.first_name %>
+<br/>
+<strong>Last Name:</strong>
+<%= @contact.last_name %>
+<br/>
+<strong>Company:</strong>
+<%= @contact.company %>
+<br/>
+<strong>Email:</strong>
+<%= @contact.email %>
+<br/>
+<strong>Phone:</strong>
+<%= @contact.phone %>
+
+<span data-samurai-hook='contacts_show'></span>
+
+<%= link_to 'Edit', samurai.edit_contact_path(@contact) %> |
+<%= link_to 'Back', samurai.contacts_path %>
